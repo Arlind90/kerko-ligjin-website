@@ -57,7 +57,7 @@ export default {
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
-        display: ["Playfair Display", "serif"],
+        display: ["Montserrat", "sans-serif"],
       },
       keyframes: {
         "fade-up": {
