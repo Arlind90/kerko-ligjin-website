@@ -1,17 +1,66 @@
+
 import { motion } from "framer-motion";
-import { ArrowRight, Search, Database, Users, Globe, Check } from "lucide-react";
+import { ArrowRight, Search, Database, Users, Globe, Check, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useState } from "react";
+
 const Index = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { label: "About", href: "#" },
+    { label: "Features", href: "#" },
+    { label: "Contact", href: "#" },
+  ];
+
   return <div className="min-h-screen bg-background-light">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="font-display text-2xl font-bold text-secondary">Kërko Ligjin</h1>
-          <div className="space-x-6">
-            <Button variant="ghost">About</Button>
-            <Button variant="ghost">Features</Button>
-            <Button variant="ghost">Contact</Button>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6">
+            {navItems.map((item) => (
+              <Button key={item.label} variant="ghost">{item.label}</Button>
+            ))}
             <Button>Get Started</Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col gap-4 mt-8">
+                  {navItems.map((item) => (
+                    <Button
+                      key={item.label}
+                      variant="ghost"
+                      className="w-full justify-start"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Button>
+                  ))}
+                  <Button
+                    className="w-full"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get Started
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
@@ -286,4 +335,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
