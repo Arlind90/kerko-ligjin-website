@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Search, Database, Users, Globe, Check, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,10 +12,21 @@ const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "About", href: "#" },
-    { label: "Features", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Features", href: "#features" },
+    { label: "Problem", href: "#problem" },
+    { label: "Solution", href: "#solution" },
+    { label: "Why Support", href: "#why-support" },
+    { label: "Target Market", href: "#target-market" },
+    { label: "Contact", href: "#contact" },
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
 
   return <div className="min-h-screen bg-background-light">
       {/* Navigation */}
@@ -27,9 +37,15 @@ const Index = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-              <Button key={item.label} variant="ghost">{item.label}</Button>
+              <Button 
+                key={item.label} 
+                variant="ghost"
+                onClick={() => scrollToSection(item.href)}
+              >
+                {item.label}
+              </Button>
             ))}
-            <Button>Get Started</Button>
+            <Button onClick={() => scrollToSection('#contact')}>Get Started</Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -47,14 +63,14 @@ const Index = () => {
                       key={item.label}
                       variant="ghost"
                       className="w-full justify-start"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => scrollToSection(item.href)}
                     >
                       {item.label}
                     </Button>
                   ))}
                   <Button
                     className="w-full"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => scrollToSection('#contact')}
                   >
                     Get Started
                   </Button>
@@ -99,7 +115,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0
@@ -146,8 +162,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem & Solution Section */}
-      <section className="py-20">
+      {/* Problem Section */}
+      <section id="problem" className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{
@@ -190,8 +206,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Solution Section */}
-      <section className="py-20 bg-white">
+      {/* Solution Section */}
+      <section id="solution" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{
@@ -236,8 +252,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Support Section */}
+      <section id="why-support" className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
+            <h2 className="font-display text-4xl font-bold text-secondary">Why Support Us</h2>
+            <p className="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
+              We are committed to providing the best legal research platform for Albanian legal professionals, students, academics, and the general public.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Target Market Section */}
-      <section className="py-20 bg-white">
+      <section id="target-market" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0
@@ -289,7 +323,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section id="contact" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div initial={{
