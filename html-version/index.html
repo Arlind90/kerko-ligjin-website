@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kërko Ligjin - Legal Research Platform</title>
+    <meta name="description" content="Advanced legal research platform for Albanian court decisions" />
+    <meta name="author" content="Kërko Ligjin" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body class="min-h-screen bg-background-light">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="font-display text-2xl font-bold text-secondary">Kërko Ligjin</h1>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-6">
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100" onclick="scrollToSection('#features')">Features</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100" onclick="scrollToSection('#problem')">Problem</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100" onclick="scrollToSection('#solution')">Solution</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100" onclick="scrollToSection('#target-market')">Target Market</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100" onclick="scrollToSection('#contact')">Contact</button>
+          <button class="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium hover:bg-primary-dark transition-colors" onclick="scrollToSection('#contact')">Get Started</button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-gray-100">
+            <i data-feather="menu" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 w-full text-left" onclick="scrollToSection('#features')">Features</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 w-full text-left" onclick="scrollToSection('#problem')">Problem</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 w-full text-left" onclick="scrollToSection('#solution')">Solution</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 w-full text-left" onclick="scrollToSection('#target-market')">Target Market</button>
+          <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 w-full text-left" onclick="scrollToSection('#contact')">Contact</button>
+          <button class="px-4 py-2 bg-primary text-white rounded-md text-sm font-medium hover:bg-primary-dark transition-colors w-full" onclick="scrollToSection('#contact')">Get Started</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center animate-fade-up">
+          <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+            Revolutionizing Legal Research
+          </span>
+          <h1 class="mt-8 font-display text-5xl sm:text-6xl font-bold text-secondary leading-tight">
+            Seamless Access to Albanian Court Decisions
+          </h1>
+          <p class="mt-6 text-xl text-secondary-light">
+            Advanced search capabilities for Constitutional Court, High Court, and more. Making legal research efficient and accessible.
+          </p>
+          <div class="mt-10 flex justify-center gap-4">
+            <button class="px-6 py-3 bg-primary text-white rounded-md text-base font-medium hover:bg-primary-dark transition-colors flex items-center gap-2">
+              Start Searching <i data-feather="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="font-display text-4xl font-bold text-secondary">Key Features</h2>
+          <p class="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
+            Our platform combines advanced technology with user-friendly design to revolutionize legal research.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors animate-on-scroll">
+            <i data-feather="search" class="w-12 h-12 text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold text-secondary mb-2">Advanced Search</h3>
+            <p class="text-secondary-light">Complex searches based on legal concepts, case types, and court levels.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors animate-on-scroll">
+            <i data-feather="database" class="w-12 h-12 text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold text-secondary mb-2">Automated Collection</h3>
+            <p class="text-secondary-light">Daily automated download and processing of court decisions.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors animate-on-scroll">
+            <i data-feather="globe" class="w-12 h-12 text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold text-secondary mb-2">Regional Coverage</h3>
+            <p class="text-secondary-light">Support for Albania, Kosovo, North Macedonia, and Montenegro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">The Problem</span>
+            <h2 class="mt-6 font-display text-4xl font-bold text-secondary leading-tight">
+              Current Legal Research is Inefficient
+            </h2>
+            <p class="mt-4 text-lg text-secondary-light">
+              The existing digital infrastructure for accessing Albanian court decisions is severely lacking, making legal research time-consuming and difficult.
+            </p>
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Limited search functionality</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Manual document downloads required</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">No search engine for First Instance Courts</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Poor user experience</span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative animate-on-scroll">
+            <div class="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Legal Research" class="w-full h-full object-cover mix-blend-overlay">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1 animate-on-scroll">
+            <div class="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Legal Research Platform" class="w-full h-full object-cover mix-blend-overlay">
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 animate-on-scroll">
+            <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              Our Solution
+            </span>
+            <h2 class="mt-6 font-display text-4xl font-bold text-secondary leading-tight">
+              Automated Legal Research Platform
+            </h2>
+            <p class="mt-4 text-lg text-secondary-light">
+              Kërko Ligjin automates the daily download of court decisions, processes and categorizes them, making them readily available through an intuitive search engine.
+            </p>
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Automated daily download of court decisions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Advanced search based on legal concepts and case types</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">User-friendly interface with direct result previews</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-feather="check" class="w-5 h-5 text-primary flex-shrink-0"></i>
+                <span class="text-secondary-light">Support for Albania, Kosovo, North Macedonia, and Montenegro</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Market Section -->
+    <section id="target-market" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="font-display text-4xl font-bold text-secondary">Who We Serve</h2>
+          <p class="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
+            Our platform is designed for everyone who needs access to Albanian legal documents.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center p-6 animate-on-scroll">
+            <i data-feather="users" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+            <p class="font-display text-3xl font-bold text-primary mb-2">2,000+</p>
+            <h3 class="text-lg font-medium text-secondary">Legal Professionals</h3>
+          </div>
+          <div class="text-center p-6 animate-on-scroll">
+            <i data-feather="users" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+            <p class="font-display text-3xl font-bold text-primary mb-2">5,000+</p>
+            <h3 class="text-lg font-medium text-secondary">Law Students</h3>
+          </div>
+          <div class="text-center p-6 animate-on-scroll">
+            <i data-feather="users" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+            <p class="font-display text-3xl font-bold text-primary mb-2">1,000+</p>
+            <h3 class="text-lg font-medium text-secondary">Academics</h3>
+          </div>
+          <div class="text-center p-6 animate-on-scroll">
+            <i data-feather="users" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+            <p class="font-display text-3xl font-bold text-primary mb-2">10,000+</p>
+            <h3 class="text-lg font-medium text-secondary">General Public</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="animate-on-scroll">
+            <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              Get In Touch
+            </span>
+            <h2 class="mt-6 font-display text-4xl font-bold text-secondary">
+              Ready to Transform Your Legal Research?
+            </h2>
+            <p class="mt-4 text-lg text-secondary-light">
+              Contact us to learn more about how Kërko Ligjin can help you streamline your legal research process.
+            </p>
+            <div class="mt-10">
+              <button class="px-6 py-3 bg-primary text-white rounded-md text-base font-medium hover:bg-primary-dark transition-colors flex items-center gap-2 mx-auto">
+                Contact Us <i data-feather="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <div class="mt-8 text-secondary-light">
+              <p>Sokrat Gjermeni</p>
+              <p>Attorney at Law</p>
+              <p class="mt-2">
+                <a href="mailto:sokrat@avgjermeni.com" class="text-primary hover:underline">
+                  sokrat@avgjermeni.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:+355692745109" class="text-primary hover:underline">
+                  +355 692 745 109
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 404 Page (Hidden by default) -->
+    <div id="not-found" class="min-h-screen flex items-center justify-center bg-gray-100 hidden">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">404</h1>
+        <p class="text-xl text-gray-600 mb-4">Oops! Page not found</p>
+        <a href="index.html" class="text-blue-500 hover:text-blue-700 underline">
+          Return to Home
+        </a>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html> 

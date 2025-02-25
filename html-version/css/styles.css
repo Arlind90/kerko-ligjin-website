@@ -1,0 +1,156 @@
+/* Custom CSS for Kërko Ligjin */
+
+/* Base styles */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: #9b87f5;
+  --primary-dark: #7a68c3;
+  --primary-foreground: 210 40% 98%;
+  --secondary: #1A1F2C;
+  --secondary-light: #8E9196;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+/* Font settings */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--secondary);
+  background-color: #F8F9FD;
+}
+
+.font-display {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Background colors */
+.bg-background-light {
+  background-color: #F8F9FD;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary\/10 {
+  background-color: rgba(155, 135, 245, 0.1);
+}
+
+.bg-primary\/20 {
+  background-color: rgba(155, 135, 245, 0.2);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-secondary-light {
+  color: var(--secondary-light);
+}
+
+/* Hover states */
+.hover\:bg-primary-dark:hover {
+  background-color: var(--primary-dark);
+}
+
+.hover\:border-primary\/20:hover {
+  border-color: rgba(155, 135, 245, 0.2);
+}
+
+/* Animation classes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu */
+#mobile-menu {
+  transition: all 0.3s ease;
+}
+
+/* Backdrop blur for navigation */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Mix blend mode for images */
+.mix-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+/* Additional utility classes */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Fix for Tailwind's container at different breakpoints */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+} 
