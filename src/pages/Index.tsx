@@ -1,11 +1,8 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Search, Database, Users, Globe, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background-light">
+  return <div className="min-h-screen bg-background-light">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -22,12 +19,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-4xl mx-auto text-center">
             <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
               Revolutionizing Legal Research
             </span>
@@ -52,12 +52,13 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
             <h2 className="font-display text-4xl font-bold text-secondary">Key Features</h2>
             <p className="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
               Our platform combines advanced technology with user-friendly design to revolutionize legal research.
@@ -65,36 +66,33 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Search,
-                title: "Advanced Search",
-                description: "Complex searches based on legal concepts, case types, and court levels."
-              },
-              {
-                icon: Database,
-                title: "Automated Collection",
-                description: "Daily automated download and processing of court decisions."
-              },
-              {
-                icon: Globe,
-                title: "Regional Coverage",
-                description: "Support for Albania, Kosovo, North Macedonia, and Montenegro."
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors"
-              >
+            {[{
+            icon: Search,
+            title: "Advanced Search",
+            description: "Complex searches based on legal concepts, case types, and court levels."
+          }, {
+            icon: Database,
+            title: "Automated Collection",
+            description: "Daily automated download and processing of court decisions."
+          }, {
+            icon: Globe,
+            title: "Regional Coverage",
+            description: "Support for Albania, Kosovo, North Macedonia, and Montenegro."
+          }].map((feature, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.2
+          }} className="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors">
                 <feature.icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-semibold text-secondary mb-2">{feature.title}</h3>
                 <p className="text-secondary-light">{feature.description}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -103,14 +101,16 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                The Challenge
-              </span>
+            <motion.div initial={{
+            opacity: 0,
+            x: -20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }}>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">The Problem</span>
               <h2 className="mt-6 font-display text-4xl font-bold text-secondary leading-tight">
                 Current Legal Research is Inefficient
               </h2>
@@ -118,31 +118,23 @@ const Index = () => {
                 The existing digital infrastructure for accessing Albanian court decisions is severely lacking, making legal research time-consuming and difficult.
               </p>
               <ul className="mt-8 space-y-4">
-                {[
-                  "Limited search functionality",
-                  "Manual document downloads required",
-                  "No search engine for First Instance Courts",
-                  "Poor user experience"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
+                {["Limited search functionality", "Manual document downloads required", "No search engine for First Instance Courts", "Poor user experience"].map((item, index) => <li key={index} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-secondary-light">{item}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: 20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} className="relative">
               <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
-                  alt="Legal Research"
-                  className="w-full h-full object-cover mix-blend-overlay"
-                />
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Legal Research" className="w-full h-full object-cover mix-blend-overlay" />
               </div>
             </motion.div>
           </div>
@@ -153,26 +145,28 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 lg:order-1"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: -20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} className="order-2 lg:order-1">
               <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-                  alt="Legal Research Platform"
-                  className="w-full h-full object-cover mix-blend-overlay"
-                />
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Legal Research Platform" className="w-full h-full object-cover mix-blend-overlay" />
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 lg:order-2"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: 20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} className="order-1 lg:order-2">
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 Our Solution
               </span>
@@ -183,17 +177,10 @@ const Index = () => {
                 Kërko Ligjin automates the daily download of court decisions, processes and categorizes them, making them readily available through an intuitive search engine.
               </p>
               <ul className="mt-8 space-y-4">
-                {[
-                  "Automated daily download of court decisions",
-                  "Advanced search based on legal concepts and case types",
-                  "User-friendly interface with direct result previews",
-                  "Support for Albania, Kosovo, North Macedonia, and Montenegro"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
+                {["Automated daily download of court decisions", "Advanced search based on legal concepts and case types", "User-friendly interface with direct result previews", "Support for Albania, Kosovo, North Macedonia, and Montenegro"].map((item, index) => <li key={index} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-secondary-light">{item}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </motion.div>
           </div>
@@ -203,12 +190,13 @@ const Index = () => {
       {/* Target Market Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
             <h2 className="font-display text-4xl font-bold text-secondary">Who We Serve</h2>
             <p className="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
               Our platform is designed for everyone who needs access to Albanian legal documents.
@@ -216,25 +204,37 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Users, title: "Legal Professionals", count: "2,000+" },
-              { icon: Users, title: "Law Students", count: "5,000+" },
-              { icon: Users, title: "Academics", count: "1,000+" },
-              { icon: Users, title: "General Public", count: "10,000+" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-6"
-              >
+            {[{
+            icon: Users,
+            title: "Legal Professionals",
+            count: "2,000+"
+          }, {
+            icon: Users,
+            title: "Law Students",
+            count: "5,000+"
+          }, {
+            icon: Users,
+            title: "Academics",
+            count: "1,000+"
+          }, {
+            icon: Users,
+            title: "General Public",
+            count: "10,000+"
+          }].map((item, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.1
+          }} className="text-center p-6">
                 <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
                 <p className="font-display text-3xl font-bold text-primary mb-2">{item.count}</p>
                 <h3 className="text-lg font-medium text-secondary">{item.title}</h3>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -243,11 +243,15 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }}>
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 Get In Touch
               </span>
@@ -280,8 +284,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
