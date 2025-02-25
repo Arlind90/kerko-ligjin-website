@@ -1,32 +1,35 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Search, Database, Users, Globe, Check, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
-
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { label: "Features", href: "#features" },
-    { label: "Problem", href: "#problem" },
-    { label: "Solution", href: "#solution" },
-    { label: "Target Market", href: "#target-market" },
-    { label: "Contact", href: "#contact" },
-  ];
-
+  const navItems = [{
+    label: "Features",
+    href: "#features"
+  }, {
+    label: "Problem",
+    href: "#problem"
+  }, {
+    label: "Solution",
+    href: "#solution"
+  }, {
+    label: "Target Market",
+    href: "#target-market"
+  }, {
+    label: "Contact",
+    href: "#contact"
+  }];
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
     setIsOpen(false);
   };
-
   return <div className="min-h-screen bg-background-light">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
@@ -35,15 +38,9 @@ const Index = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
-            {navItems.map((item) => (
-              <Button 
-                key={item.label} 
-                variant="ghost"
-                onClick={() => scrollToSection(item.href)}
-              >
+            {navItems.map(item => <Button key={item.label} variant="ghost" onClick={() => scrollToSection(item.href)}>
                 {item.label}
-              </Button>
-            ))}
+              </Button>)}
             <Button onClick={() => scrollToSection('#contact')}>Get Started</Button>
           </div>
 
@@ -57,20 +54,10 @@ const Index = () => {
               </SheetTrigger>
               <SheetContent className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col gap-4 mt-8">
-                  {navItems.map((item) => (
-                    <Button
-                      key={item.label}
-                      variant="ghost"
-                      className="w-full justify-start"
-                      onClick={() => scrollToSection(item.href)}
-                    >
+                  {navItems.map(item => <Button key={item.label} variant="ghost" className="w-full justify-start" onClick={() => scrollToSection(item.href)}>
                       {item.label}
-                    </Button>
-                  ))}
-                  <Button
-                    className="w-full"
-                    onClick={() => scrollToSection('#contact')}
-                  >
+                    </Button>)}
+                  <Button className="w-full" onClick={() => scrollToSection('#contact')}>
                     Get Started
                   </Button>
                 </div>
@@ -105,9 +92,7 @@ const Index = () => {
               <Button size="lg" className="gap-2">
                 Start Searching <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
-                Learn More
-              </Button>
+              
             </div>
           </motion.div>
         </div>
@@ -350,5 +335,4 @@ const Index = () => {
       </section>
     </div>;
 };
-
 export default Index;
