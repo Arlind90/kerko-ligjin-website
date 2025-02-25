@@ -15,7 +15,6 @@ const Index = () => {
     { label: "Features", href: "#features" },
     { label: "Problem", href: "#problem" },
     { label: "Solution", href: "#solution" },
-    { label: "Why Support", href: "#why-support" },
     { label: "Target Market", href: "#target-market" },
     { label: "Contact", href: "#contact" },
   ];
@@ -252,26 +251,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Support Section */}
-      <section id="why-support" className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-            <h2 className="font-display text-4xl font-bold text-secondary">Why Support Us</h2>
-            <p className="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
-              We are committed to providing the best legal research platform for Albanian legal professionals, students, academics, and the general public.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Target Market Section */}
-      <section id="target-market" className="py-20 bg-white">
+      <section id="target-market" className="py-20">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0
