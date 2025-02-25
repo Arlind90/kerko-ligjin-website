@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Search, Database, Users, Globe, Check } from "lucide-react";
+import { ArrowRight, Search, Database, Users, Globe, Check, Shield, Scale, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Index = () => {
   return <div className="min-h-screen bg-background-light">
       {/* Navigation */}
@@ -141,47 +142,112 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Solution Section */}
+      {/* Why Support Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{
-            opacity: 0,
-            x: -20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} className="order-2 lg:order-1">
-              <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Legal Research Platform" className="w-full h-full object-cover mix-blend-overlay" />
-              </div>
-            </motion.div>
-            <motion.div initial={{
-            opacity: 0,
-            x: 20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} className="order-1 lg:order-2">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display text-4xl font-bold text-secondary">Why Support Kërko Ligjin?</h2>
+            <p className="mt-4 text-lg text-secondary-light max-w-2xl mx-auto">
+              Our platform is poised to revolutionize legal research in Albania and beyond.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: "Fills a Critical Gap",
+                description: "No existing platform offers a comprehensive and efficient legal research tool for Albanian court decisions."
+              },
+              {
+                icon: Scale,
+                title: "Promotes Legal Transparency",
+                description: "Enhances access to public legal documents, supporting transparency and the rule of law."
+              },
+              {
+                icon: Cloud,
+                title: "Scalable and Sustainable",
+                description: "Our automated system and cloud infrastructure ensure scalability and long-term sustainability."
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="p-6 rounded-xl bg-background-light border border-gray-100 hover:border-primary/20 transition-colors"
+              >
+                <feature.icon className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold text-secondary mb-2">{feature.title}</h3>
+                <p className="text-secondary-light">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Funding Requirements Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                Our Solution
+                Funding Requirements
               </span>
               <h2 className="mt-6 font-display text-4xl font-bold text-secondary leading-tight">
-                Automated Legal Research Platform
+                Support Our Vision
               </h2>
               <p className="mt-4 text-lg text-secondary-light">
-                Kërko Ligjin automates the daily download of court decisions, processes and categorizes them, making them readily available through an intuitive search engine.
+                We are seeking funding to build and maintain a sustainable legal research platform for the Albanian-speaking community.
               </p>
-              <ul className="mt-8 space-y-4">
-                {["Automated daily download of court decisions", "Advanced search based on legal concepts and case types", "User-friendly interface with direct result previews", "Support for Albania, Kosovo, North Macedonia, and Montenegro"].map((item, index) => <li key={index} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-secondary-light">{item}</span>
-                  </li>)}
-              </ul>
+              <div className="mt-8 space-y-4">
+                {[
+                  "Develop and maintain the automated system and search engine",
+                  "Host and manage the cloud-based database",
+                  "Maintenance for optimal user experience",
+                  "Expand our reach to include legal documents from all Albanian-speaking regions"
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-secondary-light">{item}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-12 p-6 bg-background-light rounded-xl border border-gray-100">
+                <h3 className="text-xl font-semibold text-secondary mb-4">Get in Touch</h3>
+                <div className="space-y-2 text-secondary-light">
+                  <p className="font-medium">Sokrat Gjermeni</p>
+                  <p>Attorney at Law</p>
+                  <p>
+                    <a href="mailto:sokrat@avgjermeni.com" className="text-primary hover:underline">
+                      sokrat@avgjermeni.com
+                    </a>
+                  </p>
+                  <p>
+                    <a href="tel:+355692745109" className="text-primary hover:underline">
+                      +355 692 745 109
+                    </a>
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -286,4 +352,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
