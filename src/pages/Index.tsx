@@ -149,6 +149,57 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Solution Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                  alt="Legal Research Platform"
+                  className="w-full h-full object-cover mix-blend-overlay"
+                />
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                Our Solution
+              </span>
+              <h2 className="mt-6 font-display text-4xl font-bold text-secondary leading-tight">
+                Automated Legal Research Platform
+              </h2>
+              <p className="mt-4 text-lg text-secondary-light">
+                Kërko Ligjin automates the daily download of court decisions, processes and categorizes them, making them readily available through an intuitive search engine.
+              </p>
+              <ul className="mt-8 space-y-4">
+                {[
+                  "Automated daily download of court decisions",
+                  "Advanced search based on legal concepts and case types",
+                  "User-friendly interface with direct result previews",
+                  "Support for Albania, Kosovo, North Macedonia, and Montenegro"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-secondary-light">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Target Market Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
